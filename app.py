@@ -531,7 +531,7 @@ st.markdown("""
 
 # Find some meaningful numbers to show
 if not daily_covid_df.empty and selected_date_range_val:
-    insights_col1, insights_col2, insights_col3, insights_col4, insights_col5 = st.columns(5)
+    insights_col1, insights_col2, insights_col3, insights_col4 = st.columns(4)
     
     start_date_insights, end_date_insights = pd.to_datetime(selected_date_range_val[0]), pd.to_datetime(selected_date_range_val[1])
     filtered_df = daily_covid_df[(daily_covid_df["DATE"] >= start_date_insights) & (daily_covid_df["DATE"] <= end_date_insights)]
