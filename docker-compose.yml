@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  covid-dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./.env:/app/.env
+    restart: always
+    environment:
+      - SNOWFLAKE_USER=${SNOWFLAKE_USER:-}
+      - SNOWFLAKE_PWD=${SNOWFLAKE_PWD:-}
+      - SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT:-}
+      - SNOWFLAKE_ROLE=${SNOWFLAKE_ROLE:-}
+      - SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE:-}
+      - SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE:-COVID19_EPIDEMIOLOGICAL_DATA}
+      - SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA:-PUBLIC}

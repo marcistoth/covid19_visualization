@@ -1,0 +1,4 @@
+#write me a boilerplate gitignore for this project
+.env
+/presentation
+/.env
